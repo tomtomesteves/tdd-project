@@ -1,0 +1,6 @@
+O fluxo representando demonstra a pratica do TDD , onde nos orientamos a programar primeiro o teste funcional e depois o códito no seguinte fluxo:
+1. teste funcional
+2. unittest
+3. código
+
+e seguindo a ideia que orientamoss sempre a partir do teste, e depois implementamos a funcao e refatoramos ela ate ela se enquadrar no teste criado.
