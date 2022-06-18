@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from lists import views
+from accounts import views as accounts_views
 
 
 urlpatterns = [
@@ -22,4 +23,6 @@ urlpatterns = [
     url(r'^lists/new$', views.new_list, name='new_list'),
     url(r'^lists/(\d+)/$', views.view_list, name='view_list'),
     url(r'^lists/(\d+)/add_item$', views.add_item, name='add_item'),
+    url(r'^accounts/send_login_email$', accounts_views.send_login_email, name='send_login_email'),
+
 ]

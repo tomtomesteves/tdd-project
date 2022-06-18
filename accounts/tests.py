@@ -1,6 +1,7 @@
 from django.test import TestCase
 from django.contrib.auth import get_user_model
 from accounts.models import Token
+from django.test import TestCase
 
 User = get_user_model()
 
@@ -20,3 +21,12 @@ class TokenModelTest(TestCase):
         token1 = Token.objects.create(email='a@b.com')
         token2 = Token.objects.create(email='a@b.com')
         self.assertNotEqual(token1.uid, token2.uid)
+
+
+class SendLoginEmailViewTest(TestCase):
+
+    def test_redirects_to_home_page(self):
+        response = self.client.post('/accounts/send_login_email', data={
+            'email': 'edith@example.com'
+        })
+        self.assertRedirects(response, '/')
